@@ -1,0 +1,11 @@
+man cat
+touch a_file.txt
+cat a_file.txt
+cat /etc/services
+cat /etc/services | more
+head -n 5 /etc/services/
+tail -n 5 /etc/services/
+cat /etc/services | grep protocol
+cat /etc/services | grep protocol | grep tcp
+wc a_file.txt
+cat /etc/services | grep protocol | wc
