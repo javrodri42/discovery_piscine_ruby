@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-#!/usr/bin/env ruby
 i = 0
 j = 0
 if ARGV[0]
