@@ -33,18 +33,32 @@
             <%= servlet_request.query["fname"]%>
             <%= servlet_request.query["lname"]%>
         </h3>
-        <h4>
-            <%= 
-                list = [["Pablo", "Escobar", 35],
-                        ["Ruben", "Mendoza", 44],
-                        ["Marilyn", "Manson", 15],
-                        ["Marvin", "Monroe", 105]]
-                
-                new_list = list.sort_by(&:last)
-                puts list
-                puts new_list
-            %>
-        </h4>
+        <%= 
+            list = [["Pablo", "Escobar", 10],
+                    ["Ruben", "Mendoza", 20],
+                    ["Marilyn", "Manson", 30],
+                    ["Marvin", "Monroe", 40]]
+            
+            list.push([servlet_request.query["fname"],
+                        servlet_request.query["lname"],
+                        servlet_request.query["age"].to_i])
+            new_list = list.sort_by(&:last)
+            i = -1
+            j = -1
+            h = 0
+            new_list.each do |n|
+                puts n[0]
+                if n[0] == servlet_request.query["fname"]
+                    i = j + 1
+                end
+                j += 1
+            end
+            h = j - i
+            if servlet_request.query["fname"] != "" and servlet_request.query["fname"]
+              "<p>Hola #{servlet_request.query["fname"]},
+                 tienes mas edad que #{i} personas y menos edad que #{h}</p>"
+            end
+           %>
     </div>
 </body>
 </html>
