@@ -3,7 +3,6 @@
 <head>
     <style>
     .form_ruby{
-        align:"center";
         color: blue;
         display: block;
         margin: auto;
@@ -26,11 +25,12 @@
             <input type="text" id="lname" name="lname" value=""><br><br>
             <button type=submit>Validar</button>
         </form> 
-        <h3 style="text-align:center">
-            Hola
-            <%= servlet_request.query["fname"]%>
-            <%= servlet_request.query["lname"]%>
-        </h3>
+                  
+            <%=
+                if servlet_request.query["fname"] != "" and servlet_request.query["fname"]
+                    "<p>Hola #{servlet_request.query["fname"]} #{servlet_request.query["lname"]}</p>"
+                end
+            %>
     </div>
 </body>
 </html>
