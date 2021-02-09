@@ -2,11 +2,7 @@
 
 def encontrar_pelirrojos(hash)
     str = []
-    hash.each do |name, color_head|
-        if color_head.to_s == "pelirrojo"
-            str.push(name)
-        end
-    end
+    hash.select{|name, color_head| color_head == :pelirrojo ? str.push(name) : 0}
     return str
 end
 
