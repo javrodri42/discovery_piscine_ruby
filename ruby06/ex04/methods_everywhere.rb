@@ -6,7 +6,7 @@ end
 def agranda(word)
     str = word.dup
     while str.size < 8
-        str << "z"
+        str << "Z"
     end
     puts str
 

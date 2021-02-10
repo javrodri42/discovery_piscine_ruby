@@ -1,13 +1,13 @@
 #!/usr/bin/env ruby
 
-def downcase_it(word)
-    puts word.downcase 
+def downcase_it str
+	str.downcase
 end
 
-if ARGV.size != 1
-    puts "none"
+if ARGV.length == 0
+	puts "none"
 else
-    downcase_it(ARGV[0])
+	ARGV.each {|str| puts downcase_it(str)}
 end
 
     

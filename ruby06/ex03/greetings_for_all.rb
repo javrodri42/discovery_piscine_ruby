@@ -9,5 +9,5 @@ def greetings(word = "noble desconocida")
 end
     
 greetings('Lucia')
-greetings(22)
 greetings()
+greetings(22)
