@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
 params = ARGV
-p params.size
+puts "Numero de parametros : #{params.size}"

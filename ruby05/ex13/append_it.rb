@@ -1,14 +1,10 @@
 #!/usr/bin/env ruby
-if !ARGV[0]
-    puts "none"
+if ARGV.length == 0
+	puts "none"
 else
-    ARGV.each do |s|
-        if s.match("ismo")
-            puts s
-        else
-            s = s[0...-1]
-            s = s + "ismo"
-            puts s
-        end
-    end
+	ARGV.each do |str|
+		if !str.match(/ismo\z/)
+			puts str[0...str.length - 1] + "ismo"
+		end
+	end
 end

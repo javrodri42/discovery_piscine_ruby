@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
-array  = [1, 32, 12, 52]
+array  = [2, 8, 9, 48, 8, 22, -12, 2]
 new_array = []
 array.each do |n|
     new_array.push(n + 2)
 end
+puts array.to_s
 puts new_array.to_s
