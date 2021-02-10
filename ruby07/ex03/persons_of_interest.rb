@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 def nacimientos_famosos(hash)
-    hash.sort_by {|nombre, fecha_de_nacimiento| :fecha_de_nacimiento}
+    hash.sort_by {|nombre, fecha_de_nacimiento| fecha_de_nacimiento[:fecha_de_nacimiento] }.each {|nombre, fecha_de_nacimiento| puts "#{fecha_de_nacimiento[:nombre]} es una gran cientifica nacida en #{fecha_de_nacimiento[:fecha_de_nacimiento]}"}
 end
 
 
@@ -11,4 +11,4 @@ mujeres_cientificas = {
     :lise => { :nombre => "Lise Meitner", :fecha_de_nacimiento => "1878" },
     :grace => { :nombre => "Grace Hopper", :fecha_de_nacimiento => "1906" }
     }
-   puts nacimientos_famosos(mujeres_cientificas)
+   nacimientos_famosos(mujeres_cientificas)
