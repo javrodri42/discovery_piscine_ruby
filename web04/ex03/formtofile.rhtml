@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    .form_ruby{
+        color: blue;
+        display: block;
+        margin: auto;
+        vertical-align: middle;
+    }
+    .container {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            height: 300px;
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" class="form_ruby">
+            <label for="fname">Nombre:</label><br>
+            <input type="text" id="fname" name="fname" value=""><br>
+            <label for="lname">Apellido:</label><br>
+            <input type="text" id="lname" name="lname" value=""><br>
+            <label for="lname">Linea a modificar:</label><br>
+            <input type="text" id="modify" name="modify" value=""><br><br>
+            <button type=submit>Validar</button>
+        </form> 
+                  
+            <%=
+                if servlet_request.query["fname"] != "" and servlet_request.query["fname"]
+                    path = "/Users/javrodri/discovery_piscine_ruby/web04/ex02/test.txt"
+                    content = "#{servlet_request.query["lname"]}, #{servlet_request.query["fname"]}"
+                    File.open(path, "a") { |f| f.write "#{servlet_request.query["lname"]}, #{servlet_request.query["fname"]}" }
+                end
+            %>
+    </div>
+</body>
+</html>
