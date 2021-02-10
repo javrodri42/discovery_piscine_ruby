@@ -35,13 +35,14 @@
                 lname = servlet_request.query["lname"]
                 fname = servlet_request.query["fname"]
                 content = "#{lname}, #{fname}"
-                line = servlet_request.query["line"]
+                line = servlet_request.query["line"].to_i
                 if fname and fname != ""
-                    str []
-                    File.open("/Users/javrodri/discovery_piscine_ruby/web04/ex03/#{filename}", "r+").each_line {|line| str << content}
+                    str = []
+                    File.open("/Users/javrodri/discovery_piscine_ruby/web04/ex03/#{filename}", "r").each_line {|content| str << content}
                     str[line - 1] = content
                     File.open("/Users/javrodri/discovery_piscine_ruby/web04/ex03/#{filename}", "w") do |f|
 				        f.puts(str)
+                    end
                 end
             %>
     </div>
