@@ -29,8 +29,7 @@
             <%=
                 if servlet_request.query["fname"] != "" and servlet_request.query["fname"]
                     path = "/Users/javrodri/discovery_piscine_ruby/web04/ex02/test.txt"
-                    content = "#{servlet_request.query["lname"]}, #{servlet_request.query["fname"]}"
-                    File.open(path, "a") { |f| f.write "#{servlet_request.query["lname"]}, #{servlet_request.query["fname"]}" }
+                    File.open(path, "a") { |f| f.write "#{servlet_request.query["lname"]}, #{servlet_request.query["fname"]}\n" }
                 end
             %>
     </div>
