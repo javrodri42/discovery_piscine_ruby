@@ -19,20 +19,29 @@
 <body>
     <div class="container">
         <form action="" class="form_ruby">
+            <label for="fname">Nombre del archivo:</label><br>
+            <input type="text" id="filename" name="filename" value=""><br>
             <label for="fname">Nombre:</label><br>
             <input type="text" id="fname" name="fname" value=""><br>
             <label for="lname">Apellido:</label><br>
             <input type="text" id="lname" name="lname" value=""><br>
             <label for="lname">Linea a modificar:</label><br>
-            <input type="text" id="modify" name="modify" value=""><br><br>
+            <input type="text" id="line" name="line" value=""><br><br>
             <button type=submit>Validar</button>
         </form> 
                   
             <%=
-                if servlet_request.query["fname"] != "" and servlet_request.query["fname"]
-                    path = "/Users/javrodri/discovery_piscine_ruby/web04/ex02/test.txt"
-                    content = "#{servlet_request.query["lname"]}, #{servlet_request.query["fname"]}"
-                    File.open(path, "a") { |f| f.write "#{servlet_request.query["lname"]}, #{servlet_request.query["fname"]}" }
+                filename = servlet_request.query["filename"]
+                lname = servlet_request.query["lname"]
+                fname = servlet_request.query["fname"]
+                content = "#{lname}, #{fname}"
+                line = servlet_request.query["line"]
+                if fname and fname != ""
+                    str []
+                    File.open("/Users/javrodri/discovery_piscine_ruby/web04/ex03/#{filename}", "r+").each_line {|line| str << content}
+                    str[line - 1] = content
+                    File.open("/Users/javrodri/discovery_piscine_ruby/web04/ex03/#{filename}", "w") do |f|
+				        f.puts(str)
                 end
             %>
     </div>
