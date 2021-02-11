@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .square {
+            width: 100px;
+            height: 100px;
+            align-self: auto;
+            padding: 10rem;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+        <div class="square"></div>
+        <script>
+            const square = document.querySelector(".square");
+            square.addEventListener("mouseover", () => {
+                square.style.backgroundColor = "green";
+            })
+            square.addEventListener("mouseout", () => {
+                square.style.backgroundColor = "red";
+            })
+        </script>
+</body>
+</html>
