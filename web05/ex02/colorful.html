@@ -27,7 +27,12 @@
     </div>
     <script>
         function colorChange(){
-            document.getElementById("colored").style.color="green";
+            if (document.getElementById("colored").style.color == "green"){
+                document.getElementById("colored").style.color = "black";
+            }
+            else{
+                document.getElementById("colored").style.color="green";
+            }
         }
     </script>
 </body>
