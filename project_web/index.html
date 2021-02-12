@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <title>Tres en Raya</title>
+</head>
+<body>
+        <h1 class="title">TRES EN RAYA</h1>
+        <div class="options">
+            <div class="button" id="single" onclick="options(1)"><p class="text">SINGLE PLAYER</p></div>
+            <div class="button" id="multi" onclick="options(2)"><p class="text">MULTIPLAYER</p></div>
+        </div>
+        
+        <div id="juego" class="container" style="visibility: hidden;"> 
+                 
+                <div class="celda" id="00" onclick="rellena(this)"></div>
+                <div class="celda" id="01" onclick="rellena(this)"></div>
+                <div class="celda" id="02" onclick="rellena(this)"></div>
+                <div class="celda" id="10" onclick="rellena(this)"></div>
+                <div class="celda" id="11" onclick="rellena(this)"></div>
+                <div class="celda" id="12" onclick="rellena(this)"></div>
+                <div class="celda" id="20" onclick="rellena(this)"></div>
+                <div class="celda" id="21" onclick="rellena(this)"></div>
+                <div class="celda" id="22" onclick="rellena(this)"></div>
+            </div>
+    
+</body>
+<footer>
+    <a href="javascript:location.reload()" class="button">
+        <div class="button" style="color:black" id="return" href="index.html"><p class="text">MENU</p></div>
+    </a>    
+</footer>
+<script src="tictactoe.js"></script>
+</html>
